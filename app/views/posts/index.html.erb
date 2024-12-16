@@ -1,0 +1,32 @@
+<div>
+  <h1 class="font-bold text-4xl">Posts</h1>
+  <p> Here is list of all Posts</p>
+</div>
+
+  <table border='5'>
+    <thead>
+        <th> Title </th>
+       <th> Description</th>
+       <th> Action </th>
+    </thead>
+
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %> </td>
+        <td>
+          <%= post.description %>
+        </td>
+        <td>
+           <%= link_to "Edit Post", edit_post_path(post) %>
+            <%#= link_to "New Post", new_post_path %>
+             <%#= link_to "Delete Post", post_path(post), method: :delete, data: {"turbo-method": :delete , confirm: "Are you sure?" }  %>
+             
+             <%= button_to 'Destroy', post_path(post), method: :delete, form: 
+  { data: { turbo: true, turbo_confirm: 'Are you sure?' } } %>
+
+        </td>
+        
+      </tr>
+    <% end %>
+  </table>
+
