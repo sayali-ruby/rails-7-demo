@@ -53,4 +53,4 @@ group :development do
 end
 
 
-gem "rubocop", "~> 1.69"
+gem "rubocop", "~> 1.72"
